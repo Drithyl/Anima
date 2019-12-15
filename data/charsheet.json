@@ -1,0 +1,219 @@
+{
+  "name": "",
+
+  "background":
+  {
+    "player": "",
+    "class": "",
+    "race": "",
+    "size": 0,
+    "age": 0,
+    "weight": 0,
+    "height": 0,
+    "sex": "",
+    "origin": "",
+    "eyes": "",
+    "hair": "",
+    "skin": "",
+    "social_class": "",
+    "appearance": "",
+    "traits": "",
+    "description": ""
+  },
+
+  "dp":
+  {
+    "dp": 0,
+    "total": {},
+    "combat": {},
+    "magic": {},
+    "psychic": {}
+  },
+
+  "attributes":
+  {
+    "strength": {},
+    "agility": {},
+    "dexterity": {},
+    "constitution": {},
+    "intelligence": {},
+    "perception": {},
+    "power": {},
+    "willpower": {}
+  },
+
+  "movement": 0,
+  "fatigue":
+  {
+    "total": 0,
+    "used": 0
+  },
+
+  "resistances":
+  {
+    "physical": {},
+    "disease": {},
+    "poison": {},
+    "magic": {},
+    "psychic": {}
+  },
+
+  "natura": 0,
+  "gnosis": 0,
+  "destiny": 0,
+
+  "life_points":
+  {
+    "base": 0,
+    "multiples": 0,
+    "special": 0,
+    "class": 0,
+    "level": 0,
+    "total": 0,
+    "current": 0,
+    "regeneration": 0
+  },
+
+  "attack": {},
+  "block": {},
+  "dodge": {},
+  "wear_armor": {},
+
+  "initiative":
+  {
+    "total": 0,
+    "base": 0,
+    "agility": 0,
+    "dexterity": 0,
+    "armor": 0,
+    "special": 0,
+    "class": 0,
+    "level": 0
+  },
+
+  "ki_points": 0,
+  "psychic_points": 0,
+  "zeon": 0,
+
+  "actions": 0,
+
+  "abilities":
+  {
+    "athletics":
+    {
+      "acrobatics": {},
+      "athletics": {},
+      "climb": {},
+      "jump": {},
+      "ride": {},
+      "swim": {}
+    },
+
+    "creative":
+    {
+      "alchemy": {},
+      "animism": {},
+      "art": {},
+      "clothier": {},
+      "dance": {},
+      "forging": {},
+      "jewelcrafting": {},
+      "music": {},
+      "ritual_calligraphy": {},
+      "runes": {},
+      "sleight_of_hand": {}
+    },
+
+    "intellectual":
+    {
+      "animals": {},
+      "appraisal": {},
+      "herbal_lore": {},
+      "history": {},
+      "law": {},
+      "magic_appraisal": {},
+      "medicine": {},
+      "memorize": {},
+      "navigation": {},
+      "occult": {},
+      "science": {},
+      "tactics": {}
+    },
+
+    "perceptive":
+    {
+      "notice": {},
+      "search": {},
+      "tracking": {}
+    },
+
+    "social":
+    {
+      "etiquette": {},
+      "intimidation": {},
+      "leadership": {},
+      "persuasion": {},
+      "streetwise": {},
+      "style": {},
+      "trade": {}
+    },
+
+    "subterfuge":
+    {
+      "disguise": {},
+      "hide": {},
+      "lockpicking": {},
+      "poisons": {},
+      "stealth": {},
+      "theft": {},
+      "trap_lore": {}
+    },
+
+    "vigor":
+    {
+      "composure": {},
+      "feats_of_strength": {},
+      "resist_pain": {}
+    }
+  },
+
+  "advantages": {},
+  "experience":
+  {
+    "needed": 0,
+    "current": 0,
+    "modifier": 0
+  },
+
+  "languages": [],
+
+
+  "elan_abilities": [],
+  "racial_abilities": [],
+  "equipment": [],
+  "contacts": [],
+  "currency":
+  {
+    "copper": 0,
+    "silver": 0,
+    "gold": 0
+  },
+
+  "martial knowledge":
+  {
+    "total": 0,
+    "current": 0,
+    "bought": 0,
+    "from_levels": 0,
+    "from_martial_arts": 0,
+    "from_martial_mastery": 0
+  },
+
+  "ki_abilities": [],
+
+
+
+
+  "armor": [],
+  "weapons": []
+}

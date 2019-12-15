@@ -1,0 +1,25 @@
+
+{
+  "Padded":
+  {
+    "name": "Padded",
+    "protection":
+    {
+      "cut": 1,
+      "impact": 1,
+      "thrust": 1,
+      "heat": 1,
+      "electricity": 2,
+      "cold": 2,
+      "energy": 0
+    },
+
+    "requirement": 0,
+    "natural_penalty": -5,
+    "movement_restriction": 0,
+    "fortitude": 10,
+    "presence": 25,
+    "location": "Shirt",
+    "class": "Soft"
+  }
+}

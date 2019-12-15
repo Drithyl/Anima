@@ -1,0 +1,24 @@
+
+{
+  "circlet":
+  {
+    "name": "Circlet",
+    "protection":
+    {
+      "cut": 2,
+      "impact": 2,
+      "thrust": 1,
+      "heat": 1,
+      "electricity": 1,
+      "cold": 1,
+      "energy": 0
+    },
+
+    "requirement": 0,
+    "perception_penalty": 0,
+    "fortitude": 8,
+    "presence": 15,
+    "location": "Head",
+    "type": "Hard"
+  }
+}

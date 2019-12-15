@@ -1,0 +1,16 @@
+{
+  "bastard_sword":
+  {
+    "id": 0,
+    "name": "Bastard Sword",
+    "damage": 70,
+    "speed": -30,
+    "req_strength": [7,9],
+    "damage_types": ["Cut", "Impact"],
+    "weapon_types": ["Sword", "Two-handed"],
+    "specials": ["alternate_grip"],
+    "fortitude": 15,
+    "breakage": 5,
+    "presence": 25
+  }
+}
