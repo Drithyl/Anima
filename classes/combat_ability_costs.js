@@ -76,7 +76,7 @@ function verifyValueIsMultipleOf(value, multiple)
 {
   try
   {
-    ERROR_CHECKER.checkMultiple(value, multiple)
+    ERROR_CHECKER.checkIsMultiple(value, multiple)
   }
 
   catch(err)

@@ -1,11 +1,19 @@
 
 // Singleton
 
+// dependencies
 const DICE = require("./dice.js");
 
-exports.attack = function(attacker, weapon)
+
+// exports
+exports.attack = (...args) =>   _attack(...args);
+exports.defence = (...args) =>  _defence(...args);
+
+
+// functions
+const _attack = function(attacker, weapon)
 {
-  let attack = DICE.anima();
+  let attack = DICE.animaRoll();
   attack.modifier = attacker.getAttackBonusWithWeapon(weapon);
 
   if (attack.fumbled === true)
@@ -20,9 +28,9 @@ exports.attack = function(attacker, weapon)
   return attack;
 };
 
-exports.defence = function(defender)
+const _defence = function(defender)
 {
-  let defence = DICE.anima();
+  let defence = DICE.animaRoll();
   defence.modifier = defender.defence_bonus;
 
   if (defence.fumbled === true)

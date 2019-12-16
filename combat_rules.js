@@ -1,14 +1,26 @@
 
 // Singleton
 
+// dependencies
 const ROLLS = require("./rolls.js");
 
-exports.processMeleeAttack = function(attacker, target, weapon)
+
+// exports
+exports.processMeleeAttack = (...args) =>   _processMeleeAttack(...args);
+exports.attackDifference = (...args) =>     _attackDifference(...args);
+exports.armorProtection = (...args) =>      _armorProtection(...args);
+exports.damageInflicted = (...args) =>      _damageInflicted(...args);
+exports.counterattackBonus = (...args) =>   _counterattackBonus(...args);
+exports.weaponFinalDamage = (...args) =>    _damageInflicted(...args);
+
+
+// rules
+const _processMeleeAttack = function(attacker, target, weapon)
 {
   console.log(weapon);
   var attack_roll = ROLLS.attack(attacker, weapon);
   var defence_roll = ROLLS.defence(target);
-  var difference = exports.attackDifference(attack_roll, defence_roll);
+  var difference = _attackDifference(attack_roll, defence_roll);
   var armor_protection;
   var damage_inflicted;
   var counterattack_bonus;
@@ -31,27 +43,27 @@ exports.processMeleeAttack = function(attacker, target, weapon)
   // attack succeeds
   if (difference > 0)
   {
-    armor_protection = exports.armorProtection(weapon, target);
-    damage_inflicted = exports.damageInflicted(attacker, weapon, difference, armor_protection);
+    armor_protection = _armorProtection(weapon, target);
+    damage_inflicted = _damageInflicted(attacker, weapon, difference, armor_protection);
     return `${attacker.name} inflicted ${damage_inflicted} damage to ${target.name} using a ${weapon.name}.`;
   }
 
   // defence succeeds
   if (difference < 0)
   {
-    counterattack_bonus = exports.counterattackBonus(difference);
+    counterattack_bonus = _counterattackBonus(difference);
     return `${target.name} defended itself from ${attacker.name}'s attack with a difference of ${difference} and can counterattack with a +${counterattack_bonus} bonus.`;
   }
 };
 
-exports.attackDifference = (attack, defence) => attack.total - defence.total;
-exports.armorProtection = (weapon, target) => target.getArmorRating(weapon);
+const _attackDifference = (attack, defence) => attack.total - defence.total;
+const _armorProtection = (weapon, target) => target.getArmorRating(weapon);
 
 // (attack total - defence total - 20 for absorption - (10 * armor protection)) / 100 for percentage
 // percentage multiplied by weapon final damage and floored
-exports.damageInflicted = function(attacker, weapon, attack_difference, armor_protection)
+const _damageInflicted = function(attacker, weapon, attack_difference, armor_protection)
 {
-  var weapon_final_damage = exports.getWeaponFinalDamage(attacker, weapon);
+  var weapon_final_damage = _weaponFinalDamage(attacker, weapon);
   var damage_percentage = ((attack_difference - 20 - (armor_protection * 10)) / 100).toFixed(1);
   var damage_inflicted = Math.floor(damage_percentage * weapon_final_damage).min(0);
 
@@ -66,13 +78,13 @@ exports.damageInflicted = function(attacker, weapon, attack_difference, armor_pr
 
 // counterattack bonus is half of the difference of the defence over the attack,
 // rounded down to the nearest group of 5
-exports.counterattackBonus = function(defence_difference)
+const _counterattackBonus = function(defence_difference)
 {
   var halfDifference = Math.abs(defence_difference) * 0.5;
   return halfDifference.floorNearest(5);
 };
 
-exports.getWeaponFinalDamage = function(attacker, weapon)
+const _weaponFinalDamage = function(attacker, weapon)
 {
   console.log(`Attacker strength is ${attacker.attributes.strength}`);
   console.log(`Weapon damage is ${weapon.damage}`);
