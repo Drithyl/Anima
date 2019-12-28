@@ -13,6 +13,7 @@ exports.getVenomResistance = (...args) =>          _venomResistance(...args);
 exports.getMagicResistance = (...args) =>          _magicResistance(...args);
 exports.getPsychicResistance = (...args) =>        _psychicResistance(...args);
 exports.getAttributeModifier = (...args) =>        _attributeModifier(...args);
+exports.getFinalDamageScore = (...args) =>        _getFinalDamageScore(...args);
 
 // functions
 // total life points is the sum of base, lp from multiples, lp from level and anything special
@@ -68,6 +69,13 @@ const _attributeModifier = (attr_value) =>
   // attr = 13-14 mod = +25
   // attr = 15    mod = +30
   if (attr_value >= 5)    return (attr_value - 5).countPattern([1,2,2]) * 5;
+};
+
+const _getFinalDamageScore = function(strength_mod, weapon_damage)
+{
+  console.log(`Strength modifier is ${strength_mod}`);
+  console.log(`Weapon damage is ${weapon_damage}`);
+  return strength_mod + weapon_damage;
 };
 
 // local helper function, presence score + relevant attribute modifier

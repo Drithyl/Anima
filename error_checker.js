@@ -3,6 +3,7 @@
 
 // dependencies
 const CLASS_NAN_ERROR = require("./classes/custom_errors/nan_error.js");
+const CLASS_TYPE_ERROR = require("./classes/custom_errors/type_error.js");
 const CLASS_RANGE_ERROR = require("./classes/custom_errors/range_error.js");
 const CLASS_MULTIPLE_ERROR = require("./classes/custom_errors/multiple_error.js");
 const CLASS_NAI_ERROR = require("./classes/custom_errors/not_an_integer_error.js");
@@ -10,12 +11,19 @@ const CLASS_NAI_ERROR = require("./classes/custom_errors/not_an_integer_error.js
 
 // exports
 exports.checkNaN = (...args) => _checkNaN(...args);
+exports.checkType = (...args) => _checkType(...args);
 exports.checkNaI = (...args) => _checkNaI(...args);
 exports.checkRange = (...args) => _checkRange(...args);
 exports.checkIsMultiple = (...args) => _checkIsMultiple(...args);
 
 
 // functions
+const _checkType = function(value, expected_type)
+{
+  if (typeof value !== expected_type)
+  throw CLASS_NAN_ERROR.new(`Value is not a ${expected_type}.`);
+};
+
 const _checkNaN = function(nbr)
 {
   if (isNaN(nbr) === true)
@@ -24,7 +32,7 @@ const _checkNaN = function(nbr)
 
 const _checkNaI = function(nbr)
 {
-  if (nbr.isInteger() === false)
+  if (isNaN(nbr) === true || Number.isInteger(nbr) === false)
   throw CLASS_NAI_ERROR.new(`Value is not an integer.`);
 };
 
